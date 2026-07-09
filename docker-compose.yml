@@ -1,9 +1,26 @@
 services:
-  db:
+
+  dbPostgres:
     image: postgres:13
-    ports:
-      - "5432:5432"
+    container_name: postgresdb
+    restart: always
     environment:
       POSTGRES_USER: workshops_user
       POSTGRES_PASSWORD: oc2024
       POSTGRES_DB: workshopsdb
+    ports:
+      - "5432:5432"
+    networks:
+      - Workshop
+
+  wowapi:
+    container_name: back_wowapi
+    build: .
+    ports:
+      - "8080:8080"
+    networks:
+      - Workshop
+
+networks:
+  Workshop:
+    driver: bridge

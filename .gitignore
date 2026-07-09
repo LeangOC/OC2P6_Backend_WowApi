@@ -40,7 +40,5 @@ out/
 .openapi-generator/
 java-generated/
 
-MyDocs/
-MyScripts/
-MyEtapes/
 MyReadme.md
+My/
