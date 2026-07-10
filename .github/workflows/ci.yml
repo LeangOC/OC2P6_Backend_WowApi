@@ -32,3 +32,6 @@ jobs:
             echo "Unsupported project"
             exit 1
           fi
+
+      - name: Display detected project
+        run: echo "Detected project = ${{ steps.detect.outputs.project_type }}"
