@@ -19,3 +19,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Detect project type
+        id: detect
+        shell: bash
+        run: |
+          if [ -f "package.json" ]; then
+            echo "project_type=angular" >> "$GITHUB_OUTPUT"
+          elif [ -f "build.gradle" ]; then
+            echo "project_type=spring" >> "$GITHUB_OUTPUT"
+          else
+            echo "Unsupported project"
+            exit 1
+          fi
