@@ -1,9 +1,3 @@
-# Ajout pour "Publish Test Report"
-permissions:
-  contents: read
-  checks: write
-
-
 name: Continuous Integration
 
 on:
