@@ -1,5 +1,9 @@
-name: Continuous Integration
+permissions:
+  contents: read
+  checks: write
+  packages: write
 
+name: Continuous Integration
 on:
   push:
     branches:
@@ -87,6 +91,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build placeholder
         run: echo "Build job started"
