@@ -79,3 +79,9 @@ jobs:
           name: Unit Tests
           path: test-results/*.xml
           reporter: java-junit
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build placeholder
+        run: echo "Build job started"
