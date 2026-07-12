@@ -2,6 +2,8 @@ permissions:
   contents: read
   checks: write
   packages: write
+  issues: write
+  pull-requests: write
 
 name: Continuous Integration
 on:
