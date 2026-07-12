@@ -158,3 +158,5 @@ jobs:
               @semantic-release/github \
               @semantic-release/git
 
+      - name: Release placeholder
+        run: echo "Release job started"
