@@ -148,8 +148,7 @@ jobs:
         with:
          node-version: 20
 
-      - name: Release placeholder
-        run: echo "Release job started"
+
 
       - name: Install semantic-release
         run: |
@@ -160,3 +159,11 @@ jobs:
               @semantic-release/changelog \
               @semantic-release/github \
               @semantic-release/git
+
+      - name: Run semantic-release (dry run)
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx semantic-release --dry-run
+
+      - name: Release placeholder
+        run: echo "Release job started"
