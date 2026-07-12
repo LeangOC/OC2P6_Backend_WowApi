@@ -137,6 +137,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
 
+    if: github.ref == 'refs/heads/main'
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -146,6 +148,13 @@ jobs:
         with:
          node-version: 20
 
-      - name: Release placeholder
-        run: echo "Release job started"
+      - name: Install semantic-release
+        run: |
+            npm install --no-save \
+              semantic-release \
+              @semantic-release/commit-analyzer \
+              @semantic-release/release-notes-generator \
+              @semantic-release/changelog \
+              @semantic-release/github \
+              @semantic-release/git
 
