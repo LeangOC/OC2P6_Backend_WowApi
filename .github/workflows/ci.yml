@@ -160,10 +160,10 @@ jobs:
               @semantic-release/github \
               @semantic-release/git
 
-      - name: Run semantic-release (dry run)
+      - name: Run semantic-release (without dry run)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx semantic-release --dry-run
+        run: npx semantic-release
 
       - name: Release placeholder
         run: echo "Release job started"
