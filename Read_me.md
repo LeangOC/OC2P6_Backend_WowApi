@@ -27,3 +27,11 @@ clone  https://github.com/OpenClassrooms-Student-Center/G-rez-l-int-gration-et-l
 
 # main
 - merge de la branch develop
+
+- adapter la pipeline ci/cd à la branche main
+
+- Pour démarrer l'application : 
+> $ docker compose up -d
+
+- Pour déclencher la pipeline ci/cd : 
+> Faire un "push" sur cette branche "main".

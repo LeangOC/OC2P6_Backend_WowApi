@@ -14,7 +14,7 @@ services:
       - "5432:5432"
     networks:
       - Workshop
-      -
+
   # Service backend Spring Boot
   wowapi:
     container_name: back_wowapi
