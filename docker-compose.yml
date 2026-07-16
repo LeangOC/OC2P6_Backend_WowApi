@@ -1,5 +1,7 @@
+# Définition des services de l'application
 services:
 
+  # Base de données PostgreSQL
   dbPostgres:
     image: postgres:13
     container_name: postgresdb
@@ -12,7 +14,8 @@ services:
       - "5432:5432"
     networks:
       - Workshop
-
+      -
+  # Service backend Spring Boot
   wowapi:
     container_name: back_wowapi
     build: .
@@ -21,6 +24,7 @@ services:
     networks:
       - Workshop
 
+# Réseau partagé entre les services
 networks:
   Workshop:
     driver: bridge
