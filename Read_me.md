@@ -33,5 +33,12 @@ clone  https://github.com/OpenClassrooms-Student-Center/G-rez-l-int-gration-et-l
 - Pour démarrer l'application : 
 > $ docker compose up -d
 
-- Pour déclencher la pipeline ci/cd : 
-> Faire un "push" sur cette branche "main".
+- Pour déclencher la pipeline ci/cd : Faire un "push" sur cette branche "main" :
+>  $ git commit -m "fix: Test-Release-Build main"
+>  $ git push
+
+Pipepline ci/cd sur Github Action :  
+![Pipeline_CI_CD_backend.png](screenshot/Pipeline_CI_CD_backend.png)  
+
+Image docker backend avec release publié sur le registry ghrc.io :  
+![cd_image_docker_release_registry.png](screenshot/cd_image_docker_release_registry.png)  
